@@ -55,6 +55,7 @@
     "packages/*",
     "coding-challenge",
     "behavioral-interview",
-    "error-handling-test"
+    "error-handling-test",
+    "system-design"
   ]
 }

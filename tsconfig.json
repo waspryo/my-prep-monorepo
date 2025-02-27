@@ -20,6 +20,9 @@
     },
     {
       "path": "./error-handling-test"
+    },
+    {
+      "path": "./system-design"
     }
   ]
 }
