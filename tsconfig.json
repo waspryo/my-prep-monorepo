@@ -4,21 +4,6 @@
   "files": [],
   "references": [
     {
-      "path": "./coding-challenge"
-    },
-    {
-      "path": "./behavioral-interview"
-    },
-    {
-      "path": "./error-handling-test"
-    },
-    {
-      "path": "./system-design"
-    },
-    {
-      "path": "./ui-exercises"
-    },
-    {
       "path": "./libs/api"
     },
     {
@@ -29,6 +14,21 @@
     },
     {
       "path": "./libs/ui"
+    },
+    {
+      "path": "./apps/behavioral-interview"
+    },
+    {
+      "path": "./apps/error-handling-test"
+    },
+    {
+      "path": "./apps/coding-challenge"
+    },
+    {
+      "path": "./apps/system-design"
+    },
+    {
+      "path": "./apps/ui-exercises"
     }
   ]
 }

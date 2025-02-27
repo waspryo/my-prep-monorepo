@@ -57,12 +57,6 @@
   },
   "workspaces": [
     "packages/*",
-    "coding-challenge",
-    "behavioral-interview",
-    "error-handling-test",
-    "system-design",
-    "ui-exercises",
-    "ui",
     "libs/*"
   ],
   "nx": {

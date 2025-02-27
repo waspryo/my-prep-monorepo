@@ -5,7 +5,14 @@
  Delete this file and get started with your project!
  * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
-export function NxWelcome({ title }: { title: string }) {
+import { JSX } from 'react';
+
+export interface NxWelcomeProps {
+  title: string;
+  as?: string;
+}
+
+export function NxWelcome({ title }: NxWelcomeProps): JSX.Element {
   return (
     <>
       <style

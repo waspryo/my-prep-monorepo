@@ -10,7 +10,7 @@ const StyledApp = styled.div`
 export function App() {
   return (
     <StyledApp>
-      <NxWelcome title="@my-prep-monorepo/coding-challenge" />
+      <NxWelcome title="@my-prep-monorepo/coding-challenge" as="div" />
 
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}
