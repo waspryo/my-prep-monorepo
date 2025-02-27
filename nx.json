@@ -57,7 +57,7 @@
   ],
   "targetDefaults": {
     "test": {
-      "dependsOn": ["^build", "^build", "^build", "^build", "^build"]
+      "dependsOn": ["^build", "^build", "^build", "^build", "^build", "^build"]
     },
     "e2e-ci--**/*": {
       "dependsOn": ["^build"]
@@ -77,8 +77,13 @@
       "library": {
         "style": "@emotion/styled",
         "linter": "eslint",
-        "unitTestRunner": "none"
+        "unitTestRunner": "vitest"
       }
+    }
+  },
+  "release": {
+    "version": {
+      "preVersionCommand": "yarn nx run-many -t build"
     }
   }
 }

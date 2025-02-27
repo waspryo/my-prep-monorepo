@@ -28,10 +28,7 @@
       "path": "./ui-exercises"
     },
     {
-      "path": "./libs/ui"
-    },
-    {
-      "path": "./libs/hooks"
+      "path": "./ui"
     }
   ]
 }
