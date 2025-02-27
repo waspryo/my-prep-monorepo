@@ -1,0 +1,12 @@
+{
+  "name": "coding-challenge-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "projectType": "application",
+    "sourceRoot": "coding-challenge-e2e/src",
+    "implicitDependencies": [
+      "@my-prep-monorepo/coding-challenge"
+    ]
+  }
+}
