@@ -23,6 +23,9 @@
     },
     {
       "path": "./system-design"
+    },
+    {
+      "path": "./ui-exercises"
     }
   ]
 }
