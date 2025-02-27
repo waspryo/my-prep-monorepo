@@ -29,6 +29,12 @@
     },
     {
       "path": "./ui"
+    },
+    {
+      "path": "./libs/api"
+    },
+    {
+      "path": "./libs/utils"
     }
   ]
 }
