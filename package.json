@@ -12,6 +12,8 @@
     "react-router-dom": "6.11.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.5",
+    "@babel/preset-react": "^7.14.5",
     "@emotion/babel-plugin": "11.11.0",
     "@eslint/js": "^9.8.0",
     "@nx/devkit": "20.4.6",
@@ -57,6 +59,7 @@
     "behavioral-interview",
     "error-handling-test",
     "system-design",
-    "ui-exercises"
+    "ui-exercises",
+    "libs/*"
   ]
 }
