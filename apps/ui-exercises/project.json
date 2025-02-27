@@ -1,0 +1,4 @@
+{
+  "name": "@my-prep-monorepo/ui-exercises",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json"
+}

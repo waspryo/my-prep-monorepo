@@ -1,0 +1,4 @@
+{
+  "name": "@my-prep-monorepo/error-handling-test",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json"
+}
