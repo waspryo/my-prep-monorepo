@@ -1,0 +1,12 @@
+{
+  "name": "error-handling-test-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "projectType": "application",
+    "sourceRoot": "error-handling-test-e2e/src",
+    "implicitDependencies": [
+      "@my-prep-monorepo/error-handling-test"
+    ]
+  }
+}
