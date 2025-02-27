@@ -4,16 +4,10 @@
   "files": [],
   "references": [
     {
-      "path": "./coding-challenge-e2e"
-    },
-    {
       "path": "./coding-challenge"
     },
     {
       "path": "./behavioral-interview"
-    },
-    {
-      "path": "./error-handling-test-e2e"
     },
     {
       "path": "./error-handling-test"
