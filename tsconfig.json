@@ -25,13 +25,16 @@
       "path": "./ui-exercises"
     },
     {
-      "path": "./ui"
-    },
-    {
       "path": "./libs/api"
     },
     {
       "path": "./libs/utils"
+    },
+    {
+      "path": "./libs/hooks"
+    },
+    {
+      "path": "./libs/ui"
     }
   ]
 }
