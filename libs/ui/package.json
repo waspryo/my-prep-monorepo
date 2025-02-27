@@ -10,5 +10,8 @@
       "default": "./src/index.ts"
     },
     "./package.json": "./package.json"
+  },
+  "devDependencies": {
+    "vite-plugin-dts": "^4.5.0"
   }
 }
