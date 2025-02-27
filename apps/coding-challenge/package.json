@@ -1,5 +1,10 @@
 {
   "name": "@my-prep-monorepo/coding-challenge",
   "version": "0.0.1",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.6.0",
+    "axi": "^1.0.0",
+    "react-redux": "^9.2.0"
+  }
 }
