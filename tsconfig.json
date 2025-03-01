@@ -29,6 +29,12 @@
     },
     {
       "path": "./apps/ui-exercises"
+    },
+    {
+      "path": "./apps/js-react-test-prep-e2e"
+    },
+    {
+      "path": "./apps/js-react-test-prep"
     }
   ]
 }

@@ -1,0 +1,12 @@
+{
+  "name": "js-react-test-prep-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "projectType": "application",
+    "sourceRoot": "apps/js-react-test-prep-e2e/src",
+    "implicitDependencies": [
+      "@my-prep-monorepo/js-react-test-prep"
+    ]
+  }
+}
