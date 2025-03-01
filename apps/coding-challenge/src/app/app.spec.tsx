@@ -1,14 +1,14 @@
 import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 
-import App from './app';
+import { App } from './app';
 
 describe('App', () => {
   it('should render successfully', () => {
     const { baseElement } = render(
       <BrowserRouter>
         <App />
-      </BrowserRouter>
+      </BrowserRouter>,
     );
     expect(baseElement).toBeTruthy();
   });
@@ -17,10 +17,10 @@ describe('App', () => {
     const { getByText } = render(
       <BrowserRouter>
         <App />
-      </BrowserRouter>
+      </BrowserRouter>,
     );
     expect(
-      getByText(new RegExp('Welcome @my-prep-monorepo/coding-challenge', 'gi'))
+      getByText(new RegExp('Welcome @my-prep-monorepo/coding-challenge', 'gi')),
     ).toBeTruthy();
   });
 });

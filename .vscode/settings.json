@@ -1,3 +1,8 @@
 {
-  "nxConsole.nxWorkspacePath": ""
+  "nxConsole.nxWorkspacePath": "",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always"
+  }
 }

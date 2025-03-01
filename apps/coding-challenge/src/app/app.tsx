@@ -1,55 +1,75 @@
 import styled from '@emotion/styled';
-import NxWelcome from './nx-welcome';
 
-import { Route, Routes, Link } from 'react-router-dom';
+import { useFetchProfiles } from './hooks/useFetchProfiles';
+import { ProfileModal } from './components/ProfileModal';
+import { useRef, useState } from 'react';
 
-const StyledApp = styled.div`
-  // Your style here
+const StyledApp = styled.div<{ isClickedModal: boolean }>`
+  display: ${({ isClickedModal }) => (isClickedModal ? 'none' : 'grid')};
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  height: 100vh;
 `;
 
-export function App() {
-  return (
-    <StyledApp>
-      <NxWelcome title="@my-prep-monorepo/coding-challenge" as="div" />
+const ImageContainer = styled.div`
+  width: 300px;
+  height: 300px;
+`;
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+`;
 
-      {/* START: routes */}
-      {/* These routes and navigation have been generated for you */}
-      {/* Feel free to move and update them to fit your needs */}
-      <br />
-      <hr />
-      <br />
-      <div role="navigation">
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/page-2">Page 2</Link>
-          </li>
-        </ul>
-      </div>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <div>
-              This is the generated root route.{' '}
-              <Link to="/page-2">Click here for page 2.</Link>
-            </div>
-          }
-        />
-        <Route
-          path="/page-2"
-          element={
-            <div>
-              <Link to="/">Click here to go back to root page.</Link>
-            </div>
-          }
-        />
-      </Routes>
-      {/* END: routes */}
-    </StyledApp>
+export const App = () => {
+  const { profiles, loading, error } = useFetchProfiles();
+  const [isClickedModal, setIsClickedModal] = useState<boolean>(false);
+  const [selectedProfileId, setSelectedProfileId] = useState<string | null>(
+    null,
   );
-}
+  const modalRef = useRef<HTMLDivElement>(null);
 
-export default App;
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+
+  const isClickedModalAction = (id: string) => {
+    setSelectedProfileId(id);
+    setIsClickedModal(!isClickedModal);
+  };
+
+  const handleOverlayClick = (e: React.MouseEvent) => {
+    if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
+      setIsClickedModal(false);
+    }
+  };
+
+  const filteredProfiles = profiles.find(
+    (profile) => profile.id === selectedProfileId,
+  );
+
+  return (
+    <>
+      <StyledApp>
+        {profiles.map((profile, index) => {
+          return (
+            <div key={index} onClick={() => isClickedModalAction(profile.id)}>
+              <ImageContainer>
+                <Image src={profile.picture} alt={profile.name.first} />
+              </ImageContainer>
+              <h3>{profile.name}</h3>
+              <p>{profile.email}</p>
+            </div>
+          );
+        })}
+      </StyledApp>
+
+      {isClickedModal && (
+        <ProfileModal
+          profile={filteredProfiles}
+          isClickedModal={isClickedModal}
+          onOverlayClick={handleOverlayClick}
+          modalRef={modalRef}
+        />
+      )}
+    </>
+  );
+};
