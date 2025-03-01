@@ -1,55 +1,47 @@
 import styled from '@emotion/styled';
-import NxWelcome from './nx-welcome';
-
-import { Route, Routes, Link } from 'react-router-dom';
+import { useUser } from './useUser';
 
 const StyledApp = styled.div`
-  // Your style here
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  height: 100vh;
 `;
 
-export function App() {
+const Container = styled.div`
+  border: 1px solid #000;
+`;
+const UserNameContiner = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+`;
+
+const Image = styled.img`
+  width: 100%;
+  object-fit: cover;
+`;
+
+export const App = () => {
+  const { users } = useUser();
+
   return (
     <StyledApp>
-      <NxWelcome title="@my-prep-monorepo/ui-exercises" />
-
-      {/* START: routes */}
-      {/* These routes and navigation have been generated for you */}
-      {/* Feel free to move and update them to fit your needs */}
-      <br />
-      <hr />
-      <br />
-      <div role="navigation">
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/page-2">Page 2</Link>
-          </li>
-        </ul>
-      </div>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <div>
-              This is the generated root route.{' '}
-              <Link to="/page-2">Click here for page 2.</Link>
-            </div>
-          }
-        />
-        <Route
-          path="/page-2"
-          element={
-            <div>
-              <Link to="/">Click here to go back to root page.</Link>
-            </div>
-          }
-        />
-      </Routes>
-      {/* END: routes */}
+      {users.map((user, index) => {
+        return (
+          <Container key={index}>
+            <Image src={user.picture.large} alt={user.name.first} />
+            <UserNameContiner>
+              <div>{user.name.title}</div>
+              <div>{user.name.last}</div>
+              <div>{user.name.first}</div>
+            </UserNameContiner>
+            <div>Email 📩: {user.email}</div>
+            <div>Location 📍: {user.location.country}</div>
+          </Container>
+        );
+      })}
     </StyledApp>
   );
-}
-
-export default App;
+};
